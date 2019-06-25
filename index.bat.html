@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel=icon href=favicon.ico>
+    <title>淮南朝阳医院</title>
+    <link href=js/app.js rel=preload as=script>
+    <link href=js/chunk-vendors.js rel=preload as=script>
+</head>
+
+<body>
+    <div id=app></div>
+    <script src=js/chunk-vendors.js></script>
+    <script src=js/app.js></script> 
+    <script>
+        // 用户聊天页面: http://localhost:8080/chat/index.html#/user
+        // 医生聊天页面: http://localhost:8080/chat/index.html#/doctor
+
+        // 用户打开聊天页面的数据参考:
+        // var chat_config = {
+        //     userInfo: {userName: ''}, // userName...
+        //     doctorInfo: {docId: 1, doctorName: ''}, // doctorName...
+        // };
+        // 医生打开聊天页面的数据参考:
+        // var chat_config = {
+        //     userInfo: {}, // userName...
+        //     doctorInfo: {docId: 1, doctorName: ''}, // doctorName...
+        // };
+        var chat_config = {
+            userInfo: {userName: ''}, // userName...
+            doctorInfo: {docId: 1, doctorName: '', doctorAvatar: ''}, // doctorName...
+            socketInfo: {socketIp: "", socketPort: 9095} // socketIp, socketPort...
+        };
+        localStorage.setItem('chat_config', JSON.stringify(chat_config))
+    </script>
+</body> 
+</html>
