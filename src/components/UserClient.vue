@@ -201,7 +201,20 @@ export default {
           this.dealData(tempobj, true);
         }else {
           // 发送失败后提示用户错误信息
-          MessageBox.alert(res.message, '提示');
+          if(res.message.indexOf('当前医生不在线') != -1) {
+            let tempobj = {};
+            tempobj.fromUid = this.userInfo.id;
+            tempobj.toUid = this.doctorInfo.id;
+            tempobj.message = this.inputValue;
+            this.dealData(tempobj, true);
+            dealData({
+              fromUid: this.doctorInfo.id,
+              toUid: this.userInfo.id,
+              message: '当前医生不在线…'
+            })
+          }else {
+            MessageBox.alert(res.message, '提示');
+          }
         }
       }); 
     },
